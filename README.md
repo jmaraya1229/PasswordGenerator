@@ -1,7 +1,7 @@
 # PasswordGenerator
 
 ## The Task
-The purpose of this application is to create a randomly generator password for the user given a specific criteria. The user is able to adjust parameters to receive a randomly generated password that is 8 - 128 characters in length and may include lowercase letters, uppercase letters, numbers, and/or symbols. 
+The purpose of this application is to create a randomly generated password for the user given a specific criteria. The user is able to adjust parameters to receive a randomly generated password that is 8 - 128 characters in length and may include lowercase letters, uppercase letters, numbers, and/or symbols. 
 
 ## Functionality
 * On the webpage, the user will see a display box where the new password will be presented. 
