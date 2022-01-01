@@ -9,6 +9,7 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// This function generates the password given specific criteria from the user's choices by using a for loop.
 function generateString(passwordLength, characters) {
   var randomPassword = "";
   for (var i = 0; i <= passwordLength; i++) {
@@ -20,22 +21,22 @@ function generateString(passwordLength, characters) {
 
 function generatePassword() {
   var quest1 = 8;
-  var newPassword = "";
   var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRUSTUVMXYZ1234567890!@#$%^&*";
   var lower = "abcdefghijklmnopqrstuvwxyz";
   var upper = "ABCDEFGHIJKLMNOPQRUSTUVMXYZ";
   var numbers = "0123456789";
-  var symbols = "!@#$%^&*";
+  var symbols = " !#$%&*+,-./:;<=>?@[\]^_`{|}~";
   var quest3 = "y";
   var quest4 = "y";
   var quest5 = "y";
 
+  // The following if else statements save the user's responses to be used later in the for loop password generator.
   quest1 = window.prompt("How many characters long do you want your password?");
   if (quest1 >= 8 && quest1<= 128) {
     var quest2 = window.prompt("OK! " + quest1 + " character(s)! Would you like to include lowercase characters? (y/n)");
   } else {
     window.alert("Invalid reponse! Please pick a number between 8 to 128.")
-    return "Uh oh spahgettio, try again!";
+    return "Uh-Oh! Spahgetti O's! Try again!";
   }
 
   if (quest2 == "y") {
@@ -56,6 +57,7 @@ function generatePassword() {
     quest5 = window.prompt("Got it! No numbers! Would you like to include special characters? (y/n)")
   }
 
+  // The switch case organzies the user's responses to generate the password that aligns with their choices.
   var combination = quest2 + quest3 + quest4 + quest5; 
   switch(combination) {
     case "yyyy":
@@ -72,7 +74,7 @@ function generatePassword() {
 
     case "nnnn":
       window.alert("Invalid Response! Please select at least 1 criteria (lowercase, uppercase, numbers, and/or symbols) after selecting character limit.");
-      return "Uh oh spahgettio, try again!";
+      return "Uh-Oh! Spahgetti O's! Try again!";
 
     case "nnny":
       return generateString(quest1, symbols);
@@ -110,6 +112,6 @@ function generatePassword() {
   }
     
 
-// Add event listener to generate button
+// Event listener for when the "Generate Password" button is clicked.
 generateBtn.addEventListener("click", writePassword); 
 
